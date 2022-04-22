@@ -10,9 +10,6 @@
     <Filter Include="Explorer">
       <UniqueIdentifier>{34995f46-6dcf-46d4-a5f3-267a20c8fcb1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Finances">
-      <UniqueIdentifier>{95bcd7fa-afe5-48dc-af52-810985dc714f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
