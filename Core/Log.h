@@ -3,21 +3,26 @@
 #include "Common.h"
 
 static HANDLE _hConsole;
-static WORD _stdColor;
+static WORD _stdColor = 0x000F;
 
-static class Log
+class Log
 {
-public:
+private:
 	Log();
 
-	static const COORD GetPosition();
-	static void SetPosition(const COORD& pos);
-	static const COORD Size();
-	static void SetCursorVisible(bool enable = true);
-	static void Output(const string& text, WORD color = _stdColor);
+public:
+	static Log* Instance();
+	const COORD GetPosition() const;
+	void SetPosition(const COORD& pos);
+	const COORD Size() const;
+	void SetCursorVisible(bool enable = true);
+	void Output(const string& text, WORD color = _stdColor);
 
-	static void SetColor(WORD color = 0x000F);
-	static void SetColorBackground(WORD color = 0x0000);
-	static void SetColorForeground(WORD color = 0x000F);
+	void SetColor(WORD color = 0x000F);
+	void SetColorBackground(WORD color = 0x0000);
+	void SetColorForeground(WORD color = 0x000F);
+
+private:
+	static Log* _instance;
 
 };

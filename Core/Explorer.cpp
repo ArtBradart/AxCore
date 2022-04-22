@@ -5,12 +5,10 @@
 Explorer::Explorer()
 	:_Running(true)
 {
-	BeginPlay();
+	Begin();
 }
 
-Explorer::~Explorer()
-{
-}
+Explorer::~Explorer() {}
 
 bool Explorer::ConstructList(Menu& menu)
 {
@@ -156,7 +154,7 @@ bool Explorer::GetDirectories(Menu& menu)
 	return !menu._list.empty();
 }
 
-void Explorer::BeginPlay()
+void Explorer::Begin()
 {
 	while (Tick());
 }
@@ -164,7 +162,7 @@ void Explorer::BeginPlay()
 bool Explorer::Tick()
 {
 	Menu directory;
-	if(!ConstructList(directory)) return false;
+	if (!ConstructList(directory)) return false;
 	MenuHandler handler(directory);
 	
 	return _Running;

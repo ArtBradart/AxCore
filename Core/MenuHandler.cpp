@@ -6,48 +6,48 @@ MenuHandler::MenuHandler(Menu& menu)
 {
 	_selected = _menu._list.begin();
 	_target = _menu._list.begin();
-	if(!_menu._list.empty()) BeginPlay();
+	if(!_menu._list.empty()) Begin();
 }
 
-void MenuHandler::BeginPlay()
+void MenuHandler::Begin()
 {
 	/// First output
-	
-	TitleStart = Log::GetPosition();
-	Log::Output(_menu._title.Text() + '\n', _menu._title.Color());
-	TitleEnd = Log::GetPosition();
 
-	ListStart = Log::GetPosition();
+	TitleStart = Log::Instance()->GetPosition();
+	Log::Instance()->Output(_menu._title.Text() + '\n', _menu._title.Color());
+	TitleEnd = Log::Instance()->GetPosition();
+
+	ListStart = Log::Instance()->GetPosition();
 	for (const MenuItem& item : _menu._list)
 	{
-		Log::Output("  " + item.Text() + '\n', item.Color());
+		Log::Instance()->Output("  " + item.Text() + '\n', item.Color());
 	}
-	ListEnd = Log::GetPosition();
+	ListEnd = Log::Instance()->GetPosition();
 
 	int _selectedPos = distance(_menu._list.begin(), _selected);
-	Log::SetPosition({ ListStart.X, ListStart.Y + short(_selectedPos) });
-	Log::Output("> " + _selected->Text(), StdColors::Select);
-	//Log::SetPosition(ListEnd);
-
+	Log::Instance()->SetPosition({ ListStart.X, ListStart.Y + short(_selectedPos) });
+	Log::Instance()->Output("> " + _selected->Text(), StdColors::Select);
+	//Log::Instance()->SetPosition(ListEnd);
 
 	while (Tick());
 
-	EndPlay();
+	End();
 }
 
 bool MenuHandler::Tick()
 {
 	if (_menu._list.begin() == _menu._list.end()) return false;
+
 	if (_selected != _target)
 	{
 		int _selectedPos = distance(_menu._list.begin(), _selected);
-		Log::SetPosition({ ListStart.X, ListStart.Y + short(_selectedPos) });
-		Log::Output("  " + _selected->Text(), _selected->Color());
+		Log::Instance()->SetPosition({ ListStart.X, ListStart.Y + short(_selectedPos) });
+		Log::Instance()->Output("  " + _selected->Text(), _selected->Color());
 		int _targetPos = distance(_menu._list.begin(), _target);
-		Log::SetPosition({ ListStart.X, ListStart.Y + short(_targetPos) });
-		Log::Output("> " + _target->Text(), StdColors::Select);
+		Log::Instance()->SetPosition({ ListStart.X, ListStart.Y + short(_targetPos) });
+		Log::Instance()->Output("> " + _target->Text(), StdColors::Select);
 		_selected = _target;
-		//Log::SetPosition(ListEnd);
+		Log::Instance()->SetPosition(ListEnd);
 	}
 
 	switch (_getch())
@@ -67,7 +67,7 @@ bool MenuHandler::Tick()
 	return true;
 }
 
-void MenuHandler::EndPlay()
+void MenuHandler::End()
 {
 	auto clearstring = [](const string& str) {
 		for (const char& c : str)
@@ -76,14 +76,14 @@ void MenuHandler::EndPlay()
 		}
 	};
 
-	Log::SetPosition(TitleStart);
+	Log::Instance()->SetPosition(TitleStart);
 	clearstring(_menu._title.Text());
 
-	Log::SetPosition(ListStart);
+	Log::Instance()->SetPosition(ListStart);
 	for (const MenuItem& item : _menu._list)
 	{
 		clearstring("  " + item.Text());
 		cout << endl;
 	}
-	Log::SetPosition(TitleStart);
+	Log::Instance()->SetPosition(TitleStart);
 }

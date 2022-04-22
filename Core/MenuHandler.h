@@ -18,9 +18,9 @@ public:
 	MenuHandler(Menu& menu);
 
 protected:
-	void BeginPlay();
+	void Begin();
 	bool Tick();
-	void EndPlay();
+	void End();
 protected:
 	Menu _menu;
 

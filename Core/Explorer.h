@@ -14,7 +14,7 @@ public:
 	bool GetDirectories(Menu& list);
 
 protected:
-	void BeginPlay();
+	void Begin();
 	bool Tick();
 
 private:

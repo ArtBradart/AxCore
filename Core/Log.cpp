@@ -1,12 +1,21 @@
 #include "Log.h"
 
+Log* Log::_instance = 0;
+
 Log::Log()
 {
 	_stdColor = 0x000F;
 	_hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
-const COORD Log::GetPosition()
+Log* Log::Instance()
+{
+	if (!_instance) { _instance = new Log(); }
+	return _instance;
+}
+
+
+const COORD Log::GetPosition() const
 {
 	if (_hConsole == nullptr) return COORD();
 	_CONSOLE_SCREEN_BUFFER_INFO csbInfo;
@@ -20,7 +29,7 @@ void Log::SetPosition(const COORD & pos)
 	SetConsoleCursorPosition(_hConsole, pos);
 }
 
-const COORD Log::Size()
+const COORD Log::Size() const
 {
 	if (_hConsole == nullptr) return COORD();
 	_CONSOLE_SCREEN_BUFFER_INFO csbInfo;
