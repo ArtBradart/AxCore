@@ -114,6 +114,7 @@
     <ClInclude Include="Explorer.h" />
     <ClInclude Include="FMath.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuHandler.h" />
     <ClInclude Include="MenuItem.h" />
@@ -124,6 +125,7 @@
     <ClCompile Include="Explorer.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuHandler.cpp" />
     <ClCompile Include="MenuItem.cpp" />

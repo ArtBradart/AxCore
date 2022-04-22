@@ -3,10 +3,9 @@
 Log* Log::_instance = 0;
 
 Log::Log()
-{
-	_stdColor = 0x000F;
-	_hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-}
+	: _hConsole(GetStdHandle(STD_OUTPUT_HANDLE))
+	, _stdColor(0x000F)
+{}
 
 Log* Log::Instance()
 {
@@ -14,10 +13,10 @@ Log* Log::Instance()
 	return _instance;
 }
 
-
 const COORD Log::GetPosition() const
 {
-	if (_hConsole == nullptr) return COORD();
+	if (!IsValid()) return COORD();
+
 	_CONSOLE_SCREEN_BUFFER_INFO csbInfo;
 	GetConsoleScreenBufferInfo(_hConsole, &csbInfo);
 	return csbInfo.dwCursorPosition;
@@ -25,13 +24,15 @@ const COORD Log::GetPosition() const
 
 void Log::SetPosition(const COORD & pos)
 {
-	if (_hConsole == nullptr) return;
+	if (!IsValid()) return;
+
 	SetConsoleCursorPosition(_hConsole, pos);
 }
 
 const COORD Log::Size() const
 {
-	if (_hConsole == nullptr) return COORD();
+	if (!IsValid()) return COORD();
+
 	_CONSOLE_SCREEN_BUFFER_INFO csbInfo;
 	GetConsoleScreenBufferInfo(_hConsole, &csbInfo);
 	return COORD{ csbInfo.srWindow.Right, csbInfo.srWindow.Bottom };
@@ -39,7 +40,7 @@ const COORD Log::Size() const
 
 void Log::SetCursorVisible(bool enable)
 {
-	if (_hConsole == nullptr) return;
+	if (!IsValid()) return;
 
 	_CONSOLE_CURSOR_INFO ci;
 	GetConsoleCursorInfo(_hConsole, &ci);

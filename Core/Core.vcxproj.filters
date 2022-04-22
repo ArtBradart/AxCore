@@ -10,6 +10,9 @@
     <Filter Include="Explorer">
       <UniqueIdentifier>{34995f46-6dcf-46d4-a5f3-267a20c8fcb1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{dfd658be-9e4f-4ff8-8296-7d7cf63c100e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
@@ -39,11 +42,11 @@
     <ClInclude Include="Log.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="Explorer.cpp">
       <Filter>Explorer</Filter>
     </ClCompile>
@@ -64,6 +67,12 @@
     </ClCompile>
     <ClCompile Include="MenuHandler.cpp">
       <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

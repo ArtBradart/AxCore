@@ -1,9 +1,9 @@
-#include "Explorer.h"
+#include "MainMenu.h"
 
 void main(int argc, char** argv) 
 {
 	//setlocale(LC_ALL, "Russian");
-	Explorer();
+	MainMenu();
 
 	_getch();
 }
