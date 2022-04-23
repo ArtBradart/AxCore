@@ -4,14 +4,11 @@
     <Filter Include="Core">
       <UniqueIdentifier>{4c405051-83b4-4130-b17a-06cedeabd4ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Menu">
-      <UniqueIdentifier>{0278538f-5527-4b07-95f9-cbac3747f831}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Explorer">
-      <UniqueIdentifier>{34995f46-6dcf-46d4-a5f3-267a20c8fcb1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{dfd658be-9e4f-4ff8-8296-7d7cf63c100e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Objects">
+      <UniqueIdentifier>{1a16b0fa-021e-42bf-8e0b-0283edd252d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,58 +18,64 @@
     <ClInclude Include="FMath.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Explorer.h">
-      <Filter>Explorer</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuItem.h">
-      <Filter>Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuList.h">
-      <Filter>Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuHandler.h">
-      <Filter>Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="AxObject.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AxMenu.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxLabel.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxMenuItem.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxMenuHandler.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxMenuList.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Explorer.cpp">
-      <Filter>Explorer</Filter>
-    </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuItem.cpp">
-      <Filter>Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuList.cpp">
-      <Filter>Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuHandler.cpp">
-      <Filter>Menu</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="AxObject.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="AxMenu.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxLabel.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxMenuItem.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxMenuHandler.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxMenuList.cpp">
+      <Filter>Core\Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

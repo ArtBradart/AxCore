@@ -110,27 +110,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AxObject.h" />
     <ClInclude Include="Common.h" />
-    <ClInclude Include="Explorer.h" />
+    <ClInclude Include="AxCore.h" />
     <ClInclude Include="FMath.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="MenuHandler.h" />
-    <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="MenuList.h" />
-    <ClInclude Include="Title.h" />
+    <ClInclude Include="AxMenu.h" />
+    <ClInclude Include="AxMenuHandler.h" />
+    <ClInclude Include="AxMenuItem.h" />
+    <ClInclude Include="AxMenuList.h" />
+    <ClInclude Include="AxLabel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Explorer.cpp" />
+    <ClCompile Include="AxObject.cpp" />
+    <ClCompile Include="AxCore.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="MenuHandler.cpp" />
-    <ClCompile Include="MenuItem.cpp" />
-    <ClCompile Include="MenuList.cpp" />
-    <ClCompile Include="Title.cpp" />
+    <ClCompile Include="AxMenu.cpp" />
+    <ClCompile Include="AxMenuHandler.cpp" />
+    <ClCompile Include="AxMenuItem.cpp" />
+    <ClCompile Include="AxMenuList.cpp" />
+    <ClCompile Include="AxLabel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

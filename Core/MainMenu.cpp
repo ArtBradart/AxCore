@@ -1,6 +1,8 @@
 #include "MainMenu.h"
 
-#include "MenuHandler.h"
+#include "AxMenuHandler.h"
+
+namespace Ax {
 
 MainMenu::MainMenu()
 	: _Running(true)
@@ -12,14 +14,14 @@ MainMenu::~MainMenu()
 {
 }
 
-bool MainMenu::ConstructMenu(Menu& menu)
+bool MainMenu::ConstructMenu(AxMenu& menu)
 {
 	menu._title.SetColor(0x00f0);
 	menu._title.SetText("Main menu");
 
-	menu._list.Add(MenuItem([](){}, "One", StdColors::Item));
-	menu._list.Add(MenuItem([](){}, "Two", StdColors::Item));
-	menu._list.Add(MenuItem([](){}, "Three", StdColors::Item));
+	menu._list.Add(AxMenuItem([](){}, "One", StdColors::Item));
+	menu._list.Add(AxMenuItem([](){}, "Two", StdColors::Item));
+	menu._list.Add(AxMenuItem([](){}, "Three", StdColors::Item));
 
 	return true;
 }
@@ -32,9 +34,11 @@ void MainMenu::Begin()
 
 bool MainMenu::Tick()
 {
-	Menu menu;
+	AxMenu menu;
 	if (!ConstructMenu(menu)) return false;
-	MenuHandler handler(menu);
+	AxMenuHandler handler(menu);
 
 	return _Running;
 }
+
+} // End Ax.

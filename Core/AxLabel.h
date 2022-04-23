@@ -2,13 +2,15 @@
 
 #include "Common.h"
 
-class Title
+namespace Ax {
+
+class AxLabel
 {
 public:
-	Title();
-	Title(const string& text);
-	Title(const string& text, WORD color);
-	~Title();
+	AxLabel();
+	AxLabel(const string& text);
+	AxLabel(const string& text, WORD color);
+	~AxLabel();
 
 	inline const string Text() const { return _text; }
 	inline const WORD Color() const { return _color; }
@@ -19,3 +21,5 @@ protected:
 	string _text;
 	WORD _color;
 };
+
+}

@@ -1,5 +1,7 @@
 #include "Common.h"
-#include "Menu.h"
+#include "AxMenu.h"
+
+namespace Ax {
 
 class MainMenu
 {
@@ -7,7 +9,7 @@ public:
 	MainMenu();
 	~MainMenu();
 
-	bool ConstructMenu(Menu& list);
+	bool ConstructMenu(AxMenu& list);
 
 protected:
 	void Begin();
@@ -18,3 +20,5 @@ private:
 
 	bool _Running;
 };
+
+} // End Ax.

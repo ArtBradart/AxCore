@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Common.h"
-#include "Menu.h"
+#include "AxMenu.h"
+
+namespace Ax {
 
 static class StdColors
 {
@@ -12,22 +14,22 @@ public:
 	static const WORD Back = 0x0007;
 };
 
-class MenuHandler
+class AxMenuHandler
 {
 public:
-	MenuHandler(Menu& menu);
+	AxMenuHandler(AxMenu& menu);
 
 protected:
 	void Begin();
 	bool Tick();
 	void End();
 protected:
-	Menu _menu;
+	AxMenu _menu;
 
 	DWORD ColorSelect = StdColors::Select;
 
-	vector<MenuItem>::iterator _selected;
-	vector<MenuItem>::iterator _target;
+	vector<AxMenuItem>::iterator _selected;
+	vector<AxMenuItem>::iterator _target;
 
 	COORD TitleStart;
 	COORD TitleEnd;
@@ -35,3 +37,5 @@ protected:
 	COORD ListEnd;
 
 };
+
+} // End Ax.

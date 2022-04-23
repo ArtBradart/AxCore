@@ -1,7 +1,9 @@
-#include "MenuHandler.h"
+#include "AxMenuHandler.h"
 #include "Log.h"
 
-MenuHandler::MenuHandler(Menu& menu)
+namespace Ax {
+
+AxMenuHandler::AxMenuHandler(AxMenu& menu)
 	: _menu(menu)
 {
 	_selected = _menu._list.begin();
@@ -9,7 +11,7 @@ MenuHandler::MenuHandler(Menu& menu)
 	if(!_menu._list.empty()) Begin();
 }
 
-void MenuHandler::Begin()
+void AxMenuHandler::Begin()
 {
 	/// First output
 
@@ -19,7 +21,7 @@ void MenuHandler::Begin()
 	TitleEnd = logInst->GetPosition();
 
 	ListStart = logInst->GetPosition();
-	for (const MenuItem& item : _menu._list)
+	for (const AxMenuItem& item : _menu._list)
 	{
 		logInst->Output("  " + item.Text() + '\n', item.Color());
 	}
@@ -35,7 +37,7 @@ void MenuHandler::Begin()
 	End();
 }
 
-bool MenuHandler::Tick()
+bool AxMenuHandler::Tick()
 {
 	const auto& logInst = Log::Instance();
 
@@ -70,7 +72,7 @@ bool MenuHandler::Tick()
 	return true;
 }
 
-void MenuHandler::End()
+void AxMenuHandler::End()
 {
 	auto clearstring = [](const string& str) {
 		for (const char& c : str)
@@ -83,10 +85,12 @@ void MenuHandler::End()
 	clearstring(_menu._title.Text());
 
 	Log::Instance()->SetPosition(ListStart);
-	for (const MenuItem& item : _menu._list)
+	for (const AxMenuItem& item : _menu._list)
 	{
 		clearstring("  " + item.Text());
 		cout << endl;
 	}
 	Log::Instance()->SetPosition(TitleStart);
+}
+
 }
