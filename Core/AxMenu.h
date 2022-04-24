@@ -1,21 +1,19 @@
 #pragma once
 
-#include "AxObject.h"
-#include "AxLabel.h"
-#include "AxMenuItem.h"
-#include "AxMenuList.h"
+#include "AxNode.h"
 
 namespace Ax {
 
-class AxMenu : public AxObject
+class AxMenu : public AxNode
 {
 public:
 	AxMenu();
-	AxMenu(const string& text);
-	AxMenu(const AxLabel& title);
 
-	AxLabel _title;
-	AxMenuList _list;
+
+
+protected:
+	AxNode* _currentItem;
+
 };
 
 }

@@ -122,7 +122,6 @@
     <ClInclude Include="AxMenu.h" />
     <ClInclude Include="AxMenuHandler.h" />
     <ClInclude Include="AxMenuItem.h" />
-    <ClInclude Include="AxMenuList.h" />
     <ClInclude Include="AxLabel.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +136,6 @@
     <ClCompile Include="AxMenu.cpp" />
     <ClCompile Include="AxMenuHandler.cpp" />
     <ClCompile Include="AxMenuItem.cpp" />
-    <ClCompile Include="AxMenuList.cpp" />
     <ClCompile Include="AxLabel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -22,27 +22,13 @@ AxLabel::~AxLabel()
 	_text.clear();
 }
 
-void AxLabel::Begin()
-{
-	Super::Begin();
-}
-
-void AxLabel::Update()
-{
-	Super::Update();
-}
-
-void AxLabel::End()
-{
-	Super::End();
-}
-
 void AxLabel::SetText(const string& text)
 {
 	if (_text != text)
 	{
+		const string prevText = _text;
 		_text = text;
-		OnTextChanged();
+		OnTextChanged(prevText);
 	}
 }
 
@@ -50,8 +36,9 @@ void AxLabel::SetColor(WORD color)
 {
 	if (_color != color)
 	{
+		const WORD prevColor = _color;
 		_color = color;
-		OnColorChanged();
+		OnColorChanged(prevColor);
 	}
 }
 

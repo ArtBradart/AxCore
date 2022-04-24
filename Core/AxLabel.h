@@ -1,26 +1,20 @@
 #pragma once
 
 #include <string>
-#include "AxItem.h"
+#include "AxNode.h"
 
 namespace Ax {
 
 using namespace std;
 
-class AxLabel : public AxItem
+class AxLabel : public AxNode
 {
-	typedef AxItem Super;
+	typedef AxNode Super;
 public:
 	AxLabel();
 	AxLabel(const string& text);
 	AxLabel(const string& text, WORD color);
 	~AxLabel();
-
-public:
-	// AxObject overrides.
-	virtual void Begin() override;
-	virtual void Update() override;
-	virtual void End() override;
 
 public:
 	inline const string Text() const { return _text; }
@@ -29,8 +23,9 @@ public:
 	void SetColor(WORD color);
 
 protected:
-	virtual void OnTextChanged() {};
-	virtual void OnColorChanged() {};
+	virtual void OnTextChanged(const string& prevText) {};
+	virtual void OnColorChanged(const WORD& prevColor) {};
+
 protected:
 	string _text;
 	WORD _color;

@@ -36,9 +36,6 @@
     <ClInclude Include="AxMenuHandler.h">
       <Filter>Core\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="AxMenuList.h">
-      <Filter>Core\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="AxCore.h">
       <Filter>Core\Main</Filter>
     </ClInclude>
@@ -81,9 +78,6 @@
       <Filter>Core\Objects</Filter>
     </ClCompile>
     <ClCompile Include="AxMenuHandler.cpp">
-      <Filter>Core\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="AxMenuList.cpp">
       <Filter>Core\Objects</Filter>
     </ClCompile>
     <ClCompile Include="AxCore.cpp">
