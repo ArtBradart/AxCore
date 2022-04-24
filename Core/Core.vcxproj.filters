@@ -10,25 +10,19 @@
     <Filter Include="Core\Objects">
       <UniqueIdentifier>{1a16b0fa-021e-42bf-8e0b-0283edd252d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Main">
+      <UniqueIdentifier>{35875ecd-8d01-4e1a-a0b0-11b54d64e42d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utils">
+      <UniqueIdentifier>{feabfbc7-c1a8-4d49-be30-4b35c5c65411}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="FMath.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="AxObject.h">
       <Filter>Core\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="AxCore.h">
-      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="AxMenu.h">
       <Filter>Core\Objects</Filter>
@@ -45,11 +39,29 @@
     <ClInclude Include="AxMenuList.h">
       <Filter>Core\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="AxCore.h">
+      <Filter>Core\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="AxItem.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AxNode.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FMath.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AxCoord.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Log.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -58,9 +70,6 @@
     </ClCompile>
     <ClCompile Include="AxObject.cpp">
       <Filter>Core\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="AxCore.cpp">
-      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="AxMenu.cpp">
       <Filter>Core\Objects</Filter>
@@ -76,6 +85,21 @@
     </ClCompile>
     <ClCompile Include="AxMenuList.cpp">
       <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxCore.cpp">
+      <Filter>Core\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="AxItem.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxNode.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="AxCoord.cpp">
+      <Filter>Core\Utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

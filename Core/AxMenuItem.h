@@ -1,12 +1,14 @@
 #pragma once
 
+#include <functional>
+
 #include "AxLabel.h"
 
 namespace Ax {
 
 class AxMenuItem : public AxLabel
 {
-typedef AxLabel Super ;
+typedef AxLabel Super;
 public:
 	AxMenuItem();
 	AxMenuItem(const function<void()>& action);

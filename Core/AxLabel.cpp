@@ -22,14 +22,37 @@ AxLabel::~AxLabel()
 	_text.clear();
 }
 
-void AxLabel::SetText(const string & text)
+void AxLabel::Begin()
 {
-	_text = text;
+	Super::Begin();
+}
+
+void AxLabel::Update()
+{
+	Super::Update();
+}
+
+void AxLabel::End()
+{
+	Super::End();
+}
+
+void AxLabel::SetText(const string& text)
+{
+	if (_text != text)
+	{
+		_text = text;
+		OnTextChanged();
+	}
 }
 
 void AxLabel::SetColor(WORD color)
 {
-	_color = color;
+	if (_color != color)
+	{
+		_color = color;
+		OnColorChanged();
+	}
 }
 
 } // End Ax.
