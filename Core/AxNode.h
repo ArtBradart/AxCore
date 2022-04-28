@@ -10,8 +10,11 @@ using namespace std;
 class AxNode
 {
 public:
-	AxNode(AxNode* parent = nullptr, const AxCoord& location = {}, const AxCoord& bounds = {});
+	AxNode();
 	~AxNode();
+
+	void Init();
+	bool IsInited() const { return _isInited; }
 
 	void SetParent(AxNode* node);
 	AxNode* GetParent() const;
@@ -24,19 +27,23 @@ public:
 	AxCoord GetLocation() const;
 	AxCoord GetGlobalLocation() const;
 	void SetLocation(const AxCoord& coord);
+	void SetGlobalLocation(const AxCoord& coord);
 
-	AxCoord GetBounds() const;
-	void SetBounds(const AxCoord& coord);
+	// For visual.
+	virtual void Redraw();
+	virtual void ClearVisual() {}; // TODO.
 
 protected:
-	void OnLocationChanged(const AxCoord& prewCoord);
-	void OnBoundsChanged(const AxCoord& prewCoord);
+	virtual void OnLocationChanged();
 
 protected:
 	AxNode* _parent;
 	vector<AxNode*> _childs;
 	AxCoord _location;
-	AxCoord _bounds;
+
+	bool _isInited;
+
+	AxCoord _prevLocation;
 
 };
 

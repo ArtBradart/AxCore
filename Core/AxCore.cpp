@@ -31,4 +31,21 @@ void AxCore::End()
 
 }
 
+void AxCore::SetRootNode(AxNode* rootNode)
+{
+	if (_rootNode != rootNode) {
+		AxNode* prevRoot = _rootNode;
+		_rootNode = rootNode;
+		OnRootNodeChanged(prevRoot);
+	}
+}
+
+AxNode* AxCore::GetRootNode() const
+{
+	return _rootNode;
+}
+
+void AxCore::OnRootNodeChanged(AxNode* prevRoot)
+{}
+
 } // End Ax.

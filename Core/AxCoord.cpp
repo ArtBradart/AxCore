@@ -14,7 +14,7 @@ AxCoord::AxCoord(const AxCoord& other)
 
 COORD AxCoord::ToStdCoord() const
 {
-	return { x, y };
+	return { (SHORT)x, (SHORT)y };
 }
 
 

@@ -1,5 +1,6 @@
 #pragma once
 
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,6 +17,7 @@
 #include <Windows.h>
 #include <conio.h>
 
-#include "FMath.h"
+//#include "FMath.h"
 
 using namespace std;
+*/

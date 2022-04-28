@@ -1,14 +1,21 @@
 #pragma once
 
-#include "Common.h"
+//#include "Common.h"
+#include <string>
+#include <locale>
+#include <Windows.h>
 
-class Log
+namespace Ax {
+
+using namespace std;
+
+class AxLog
 {
 private:
-	Log();
+	AxLog();
 
 public:
-	static Log* Instance();
+	static AxLog* Instance();
 
 	bool IsValid() const { return _hConsole != nullptr; }
 
@@ -17,6 +24,7 @@ public:
 	const COORD Size() const;
 	void SetCursorVisible(bool enable = true);
 	void Output(const string& text, WORD color);
+	void Clear(const string& text);
 
 	void SetColor(WORD color = 0x000F);
 	void SetColorBackground(WORD color = 0x0000);
@@ -26,9 +34,11 @@ public:
 
 
 private:
-	static Log* _instance;
+	static AxLog* _instance;
 
 	HANDLE _hConsole;
 	WORD _stdColor = 0x000F;
 
 };
+
+} // End Ax.

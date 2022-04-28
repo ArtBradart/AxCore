@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Common.h"
-#include "AxMenu.h"
+//#include "Common.h"
+//#include "AxMenuItem.h"
 
 namespace Ax {
-
+/*
 static class StdColors
 {
 public:
@@ -28,8 +28,8 @@ protected:
 
 	DWORD ColorSelect = StdColors::Select;
 
-	vector<AxMenuItem>::iterator _selected;
-	vector<AxMenuItem>::iterator _target;
+	vector<AxMenuItem*>::iterator _selected;
+	vector<AxMenuItem*>::iterator _target;
 
 	COORD TitleStart;
 	COORD TitleEnd;
@@ -37,5 +37,5 @@ protected:
 	COORD ListEnd;
 
 };
-
+*/
 } // End Ax.

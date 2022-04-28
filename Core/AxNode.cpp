@@ -2,16 +2,24 @@
 
 namespace Ax {
 	
-AxNode::AxNode(AxNode* parent, const AxCoord& location, const AxCoord& bounds)
-	: _parent(parent)
-	, _location(location)
-	, _bounds(bounds)
+AxNode::AxNode()
+	: _parent(nullptr)
+	, _location()
+	, _prevLocation()
+	, _isInited(false)
 {}
 
 AxNode::~AxNode()
 {
+	ClearVisual();
 	_parent = nullptr;
 	_childs.clear();
+}
+
+void AxNode::Init()
+{
+	_isInited = true;
+	Redraw();
 }
 
 void AxNode::SetParent(AxNode* node)
@@ -30,6 +38,7 @@ void AxNode::SetParent(AxNode* node)
 		_parent->AddChild(this);
 	}
 
+	if (IsInited()) Redraw();
 }
 
 AxNode* AxNode::GetParent() const
@@ -43,6 +52,9 @@ void AxNode::AddChild(AxNode* node)
 	if (res != _childs.end()) return;
 
 	_childs.push_back(node);
+	node->SetParent(this);
+
+	if (IsInited()) Redraw();
 }
 
 void AxNode::RemoveChild(AxNode* node)
@@ -51,6 +63,9 @@ void AxNode::RemoveChild(AxNode* node)
 	if (res != _childs.end()) return;
 
 	_childs.erase(res);
+	node->SetParent(nullptr);
+
+	if (IsInited()) Redraw();
 }
 
 int AxNode::GetChildsCount() const
@@ -87,31 +102,32 @@ void AxNode::SetLocation(const AxCoord& coord)
 {
 	if (_location != coord)
 	{
-		AxCoord prevValue = _location;
 		_location = coord;
-		this->OnLocationChanged(prevValue);
+		this->OnLocationChanged();
 	}
 }
 
-AxCoord AxNode::GetBounds() const
+void AxNode::SetGlobalLocation(const AxCoord& coord)
 {
-	return _bounds;
-}
-
-void AxNode::SetBounds(const AxCoord& coord)
-{
-	if (_bounds != coord)
+	AxCoord loc = coord;
+	if (_parent)
 	{
-		AxCoord prevValue = _bounds;
-		_bounds = coord;
-		this->OnBoundsChanged(prevValue);
+		loc -= _parent->GetGlobalLocation();
+	}
+	SetLocation(loc);
+}
+
+void AxNode::Redraw()
+{
+	_prevLocation = GetGlobalLocation();
+	for (AxNode* child : _childs) {
+		child->Redraw();
 	}
 }
 
-void AxNode::OnLocationChanged(const AxCoord& prewCoord)
-{}
-
-void AxNode::OnBoundsChanged(const AxCoord& prewCoord)
-{}
+void AxNode::OnLocationChanged()
+{
+	if (IsInited()) Redraw();
+}
 
 } // End Ax.

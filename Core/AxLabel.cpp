@@ -1,20 +1,14 @@
 #include "AxLabel.h"
 
+#include "AxLog.h"
+
 namespace Ax {
 
 AxLabel::AxLabel()
 	: _text("Title")
 	, _color(0x000f)
-{}
-
-AxLabel::AxLabel(const string& text)
-	: _text(text)
-	, _color(0x000f)
-{}
-
-AxLabel::AxLabel(const string& text, WORD color)
-	: _text(text)
-	, _color(color)
+	, _prevText()
+	, _prevColor()
 {}
 
 AxLabel::~AxLabel()
@@ -22,13 +16,30 @@ AxLabel::~AxLabel()
 	_text.clear();
 }
 
+void AxLabel::Redraw()
+{
+	auto log = AxLog::Instance();
+	AxCoord tempPosition = log->GetPosition();
+
+	log->SetPosition(_prevLocation.ToStdCoord());
+	log->Clear(_prevText);
+
+	log->SetPosition(GetGlobalLocation().ToStdCoord());
+	log->Output(_text, _color);
+
+	log->SetPosition(tempPosition.ToStdCoord());
+
+	_prevText = _text;
+	_prevColor = _color;
+	Super::Redraw();
+}
+
 void AxLabel::SetText(const string& text)
 {
 	if (_text != text)
 	{
-		const string prevText = _text;
 		_text = text;
-		OnTextChanged(prevText);
+		OnTextChanged();
 	}
 }
 
@@ -36,10 +47,19 @@ void AxLabel::SetColor(WORD color)
 {
 	if (_color != color)
 	{
-		const WORD prevColor = _color;
 		_color = color;
-		OnColorChanged(prevColor);
+		OnColorChanged();
 	}
+}
+
+void AxLabel::OnTextChanged()
+{
+	if (IsInited()) Redraw();
+}
+
+void AxLabel::OnColorChanged()
+{
+	if (IsInited()) Redraw();
 }
 
 } // End Ax.

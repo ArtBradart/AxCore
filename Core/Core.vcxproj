@@ -111,13 +111,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AxCoord.h" />
-    <ClInclude Include="AxItem.h" />
     <ClInclude Include="AxNode.h" />
-    <ClInclude Include="AxObject.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="AxCore.h" />
     <ClInclude Include="FMath.h" />
-    <ClInclude Include="Log.h" />
+    <ClInclude Include="AxLog.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="AxMenu.h" />
     <ClInclude Include="AxMenuHandler.h" />
@@ -126,11 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AxCoord.cpp" />
-    <ClCompile Include="AxItem.cpp" />
     <ClCompile Include="AxNode.cpp" />
-    <ClCompile Include="AxObject.cpp" />
     <ClCompile Include="AxCore.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="AxLog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="AxMenu.cpp" />

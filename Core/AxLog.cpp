@@ -1,19 +1,23 @@
-#include "Log.h"
+#include "AxLog.h"
 
-Log* Log::_instance = 0;
+#include <iostream>
 
-Log::Log()
+namespace Ax {
+
+AxLog* AxLog::_instance = 0;
+
+AxLog::AxLog()
 	: _hConsole(GetStdHandle(STD_OUTPUT_HANDLE))
 	, _stdColor(0x000F)
 {}
 
-Log* Log::Instance()
+AxLog* AxLog::Instance()
 {
-	if (!_instance) { _instance = new Log(); }
+	if (!_instance) { _instance = new AxLog(); }
 	return _instance;
 }
 
-const COORD Log::GetPosition() const
+const COORD AxLog::GetPosition() const
 {
 	if (!IsValid()) return COORD();
 
@@ -22,14 +26,14 @@ const COORD Log::GetPosition() const
 	return csbInfo.dwCursorPosition;
 }
 
-void Log::SetPosition(const COORD & pos)
+void AxLog::SetPosition(const COORD & pos)
 {
 	if (!IsValid()) return;
 
 	SetConsoleCursorPosition(_hConsole, pos);
 }
 
-const COORD Log::Size() const
+const COORD AxLog::Size() const
 {
 	if (!IsValid()) return COORD();
 
@@ -38,7 +42,7 @@ const COORD Log::Size() const
 	return COORD{ csbInfo.srWindow.Right, csbInfo.srWindow.Bottom };
 }
 
-void Log::SetCursorVisible(bool enable)
+void AxLog::SetCursorVisible(bool enable)
 {
 	if (!IsValid()) return;
 
@@ -49,7 +53,7 @@ void Log::SetCursorVisible(bool enable)
 	SetConsoleCursorInfo(_hConsole, &ci);
 }
 
-void Log::Output(const string & text, WORD color)
+void AxLog::Output(const string & text, WORD color)
 {
 	bool bDefColor = color == _stdColor;
 	WORD defColor = _stdColor;
@@ -58,20 +62,27 @@ void Log::Output(const string & text, WORD color)
 	if (!bDefColor) SetColor(defColor);
 }
 
-void Log::SetColor(WORD color)
+void AxLog::Clear(const string& text)
+{
+	for (const char& c : text)
+		cout << ' ';
+}
+
+void AxLog::SetColor(WORD color)
 {
 	if (color == _stdColor) return;
 	_stdColor = color;
 	SetConsoleTextAttribute(_hConsole, _stdColor);
 }
 
-void Log::SetColorBackground(WORD color)
+void AxLog::SetColorBackground(WORD color)
 {
 	_stdColor = _stdColor & 0x00f0;
 }
 
-void Log::SetColorForeground(WORD color)
+void AxLog::SetColorForeground(WORD color)
 {
 	_stdColor = _stdColor & 0x000f;
 }
 
+} // End Ax.

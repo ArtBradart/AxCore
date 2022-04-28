@@ -1,8 +1,8 @@
-#include "Common.h"
-#include "AxMenu.h"
+//#include "Common.h"
+//#include "AxMenu.h"
 
 namespace Ax {
-
+/*
 class MainMenu
 {
 public:
@@ -20,5 +20,5 @@ private:
 
 	bool _Running;
 };
-
+*/
 } // End Ax.

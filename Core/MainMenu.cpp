@@ -1,9 +1,9 @@
 #include "MainMenu.h"
 
-#include "AxMenuHandler.h"
+//#include "AxMenuHandler.h"
 
 namespace Ax {
-
+/*
 MainMenu::MainMenu()
 	: _Running(true)
 {
@@ -36,9 +36,9 @@ bool MainMenu::Tick()
 {
 	AxMenu menu;
 	if (!ConstructMenu(menu)) return false;
-	AxMenuHandler handler(menu);
+	//AxMenuHandler handler(menu);
 
 	return _Running;
 }
-
+*/
 } // End Ax.
