@@ -2,6 +2,8 @@
 
 #include <Windows.h>
 
+namespace Ax {
+
 class AxCoord
 {
 public:
@@ -35,3 +37,4 @@ public:
 	int x, y;
 };
 
+} // End Ax.

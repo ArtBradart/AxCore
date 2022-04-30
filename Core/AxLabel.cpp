@@ -52,6 +52,12 @@ void AxLabel::SetColor(WORD color)
 	}
 }
 
+AxRect AxLabel::GetRect() const
+{
+	AxCoord coord = GetGlobalLocation();
+	return { coord, coord + AxCoord(_text.size(), 1) };
+}
+
 void AxLabel::OnTextChanged()
 {
 	if (IsInited()) Redraw();

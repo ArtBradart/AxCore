@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "AxRect.h"
 #include "AxNode.h"
 
 namespace Ax {
@@ -21,6 +22,8 @@ public:
 	void SetText(const string& text);
 	inline const WORD Color() const { return _color; }
 	void SetColor(WORD color);
+
+	AxRect GetRect() const;
 
 protected:
 	virtual void OnTextChanged();

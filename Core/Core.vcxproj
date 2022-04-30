@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClInclude Include="AxCoord.h" />
     <ClInclude Include="AxNode.h" />
+    <ClInclude Include="AxRect.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="AxCore.h" />
     <ClInclude Include="FMath.h" />
@@ -127,6 +128,7 @@
     <ClCompile Include="AxNode.cpp" />
     <ClCompile Include="AxCore.cpp" />
     <ClCompile Include="AxLog.cpp" />
+    <ClCompile Include="AxRect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="AxMenu.cpp" />

@@ -1,5 +1,7 @@
 #include "AxCoord.h"
 
+namespace Ax {
+
 AxCoord::AxCoord(int x, int y)
 	: x(x), y(y)
 {}
@@ -147,3 +149,5 @@ AxCoord AxCoord::operator/=(int other)
 	y /= other;
 	return *this;
 }
+
+} // End Ax.

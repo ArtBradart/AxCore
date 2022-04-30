@@ -51,6 +51,9 @@
     <ClInclude Include="AxLog.h">
       <Filter>Core\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="AxRect.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -81,6 +84,9 @@
       <Filter>Core\Utils</Filter>
     </ClCompile>
     <ClCompile Include="AxLog.cpp">
+      <Filter>Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="AxRect.cpp">
       <Filter>Core\Utils</Filter>
     </ClCompile>
   </ItemGroup>
