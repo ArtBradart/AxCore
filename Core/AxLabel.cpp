@@ -55,7 +55,7 @@ void AxLabel::SetColor(WORD color)
 AxRect AxLabel::GetRect() const
 {
 	AxCoord coord = GetGlobalLocation();
-	return { coord, coord + AxCoord(_text.size(), 1) };
+	return { coord, coord + AxCoord((int)_text.size(), 1) };
 }
 
 void AxLabel::OnTextChanged()

@@ -15,6 +15,9 @@ public:
 
 	void Init();
 	bool IsInited() const { return _isInited; }
+	
+	template<class ClassT>
+	ClassT* As() { return dynamic_cast<ClassT*>(this); }
 
 	void SetParent(AxNode* node);
 	AxNode* GetParent() const;
@@ -23,6 +26,7 @@ public:
 	int GetChildsCount() const;
 	const vector<AxNode*>& GetChilds() const;
 	AxNode* GetChild(int index);
+	int GetChildIndex(AxNode* child) const;
 
 	AxCoord GetLocation() const;
 	AxCoord GetGlobalLocation() const;

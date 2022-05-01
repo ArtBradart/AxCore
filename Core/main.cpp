@@ -1,5 +1,5 @@
 #include <conio.h>
-#include "AxLabel.h"
+#include "AxTestMenu.h"
 
 int main(int argc, char** argv) 
 {
@@ -7,21 +7,9 @@ int main(int argc, char** argv)
 	//Ax::MainMenu();
 	using namespace Ax;
 
-	AxLabel* testLabel = new AxLabel();
-	testLabel->Init();
-	Sleep(1000);
-
-	testLabel->SetText("Hello, world");
-	Sleep(1000);
-
-	AxNode* testNode = new AxNode();
-	testNode->SetLocation({ 3, 3 });
-	testNode->AddChild(testLabel);
-	testNode->Init();
-	Sleep(1000);
-
-	testLabel->SetText("Nice!");
-	Sleep(1000);
+	AxTestMenu* testMenu = new AxTestMenu();
+	testMenu->Init();
+	testMenu->Update();
 
 	_getch();
 

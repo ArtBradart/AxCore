@@ -16,6 +16,9 @@
     <Filter Include="Core\Utils">
       <UniqueIdentifier>{feabfbc7-c1a8-4d49-be30-4b35c5c65411}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Layout">
+      <UniqueIdentifier>{e903350b-2d9d-42e0-a27f-0daa3bff7953}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="AxRect.h">
       <Filter>Core\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="AxTestMenu.h">
+      <Filter>Main\Layout</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="AxRect.cpp">
       <Filter>Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="AxTestMenu.cpp">
+      <Filter>Main\Layout</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

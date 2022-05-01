@@ -83,6 +83,18 @@ AxNode* AxNode::GetChild(int index)
 	return _childs[index];
 }
 
+int AxNode::GetChildIndex(AxNode* child) const
+{
+	for (int i = 0; i < _childs.size(); i++)
+	{
+		if (child == _childs[i])
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
 AxCoord AxNode::GetLocation() const
 {
 	return _location;
