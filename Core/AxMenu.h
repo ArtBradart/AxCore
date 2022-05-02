@@ -2,6 +2,7 @@
 
 #include "AxNode.h"
 #include "AxMenuItem.h"
+#include "AxListContainer.h"
 
 namespace Ax {
 
@@ -19,8 +20,12 @@ public:
 	AxMenu();
 
 	void Update();
+	void Add(AxNode* item);
+	void Remove(AxNode* item);
 
 protected:
+	AxListContainer* _container;
+	AxLabel* _indicator;
 	AxMenuItem* _currentItem;
 	AxMenuItem* _targetItem;
 

@@ -19,6 +19,10 @@ AxNode::~AxNode()
 void AxNode::Init()
 {
 	_isInited = true;
+	for (AxNode* child : _childs)
+	{
+		child->Init();
+	}
 	Redraw();
 }
 

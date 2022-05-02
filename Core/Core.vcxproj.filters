@@ -60,6 +60,9 @@
     <ClInclude Include="AxTestMenu.h">
       <Filter>Main\Layout</Filter>
     </ClInclude>
+    <ClInclude Include="AxListContainer.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -97,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="AxTestMenu.cpp">
       <Filter>Main\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="AxListContainer.cpp">
+      <Filter>Core\Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

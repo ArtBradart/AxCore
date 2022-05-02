@@ -9,8 +9,7 @@ AxTestMenu::AxTestMenu()
 		item->SetAction(func);
 		item->SetText(name);
 		item->SetColor((WORD)color);
-		item->SetLocation({ 0, GetChildsCount() });
-		AddChild(item);
+		Add(item);
 	};
 
 	addListItem([]() {}, "One", StdColors::Item);
