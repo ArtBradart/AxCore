@@ -3,6 +3,7 @@
 #include "AxNode.h"
 #include "AxMenuItem.h"
 #include "AxListContainer.h"
+#include "AxBorder.h"
 
 namespace Ax {
 
@@ -26,6 +27,8 @@ public:
 protected:
 	AxListContainer* _container;
 	AxLabel* _indicator;
+	AxBorder* _border;
+
 	AxMenuItem* _currentItem;
 	AxMenuItem* _targetItem;
 

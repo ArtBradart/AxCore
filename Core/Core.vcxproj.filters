@@ -63,6 +63,9 @@
     <ClInclude Include="AxListContainer.h">
       <Filter>Core\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="AxBorder.h">
+      <Filter>Core\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +105,9 @@
       <Filter>Main\Layout</Filter>
     </ClCompile>
     <ClCompile Include="AxListContainer.cpp">
+      <Filter>Core\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AxBorder.cpp">
       <Filter>Core\Objects</Filter>
     </ClCompile>
   </ItemGroup>
